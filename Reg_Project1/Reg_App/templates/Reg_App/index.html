@@ -1,0 +1,73 @@
+<html>
+<head><title>Register Page</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    </head>
+
+<body>
+    <style>
+        body {
+            background-color:lightblue;
+
+        }
+        form {
+            background-color:darkcyan;
+            border:1px solid grey;
+            margin-top:10px;
+            border-radius:10px;
+            padding:10px;
+        }
+        .btn {
+            margin-top:10px;
+        }
+    </style>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-3 col-md-6">
+                <form method="post">
+                    <h2 class="text-center">Please Enter Your Data Here.....</h2>
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Enter Your First Name:</label>
+                            <input type="text" name="fname" class="form-control" />
+
+                        </div>
+                        <div class="col-md-6">
+                            <label>Enter Your Last Name:</label>
+                            <input type="text" name="lname" class="form-control" />
+
+                        </div>
+
+                    </div>
+                    <label>Enter Your Username</label>
+                    <input type="text" name="username" class="form-control" />
+
+                    <label>Enter Your Password</label>
+                    <input type="password" name="password" class="form-control" />
+
+                    <label>Enter Your Mobile</label>
+                    <input type="number" name="mobile" class="form-control" />
+                    <center>
+                        <input type="submit" value="Login" class="btn btn-primary" />
+                        <input type="reset" value="Clear" class="btn btn-danger" /><br />
+                        <a href="{% url 'login' %}">Login Page</a>
+                    </center>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</body>
+</html>
